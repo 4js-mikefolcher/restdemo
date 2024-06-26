@@ -14,6 +14,7 @@ PUBLIC FUNCTION ping()
 	FOR idx = 1 TO keys.getLength()
 		VAR keyName = keys[idx]
 		VAR keyValue = webContext[keyName]
+		LET keyValue = keyValue.replaceAll('"', "'")
 		CALL jsonContext.put(keyName, keyValue)
 	END FOR
 
